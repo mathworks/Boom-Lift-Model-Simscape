@@ -1,0 +1,37 @@
+component mysmoothstep
+% PS Smooth Step :0.75
+% This block implements a smooth step function:
+% 
+% y = 3u^2-2u^3
+%
+% Inputs and outputs are scaled using parameters.
+%
+% All connections are physical signal ports.
+   
+% Copyright 2016-2020 The MathWorks, Inc.
+    
+parameters
+  step_start = { 0, '1' };  % Step Start
+  step_finish = { 1, '1' }; % Step Finish
+  min_out = { 1, '1' };     % Minimum Output
+  max_out = { 1, '1' };     % Maximum Output
+end
+    
+inputs
+  U = { 0, '1' }; % U:left
+end
+    
+outputs
+  Y = { 0, '1' }; % Y:right
+end
+  
+equations
+  let
+    U_lim = if(lt(U,step_start)), step_start; elseif (gt(U,step_finish)), step_finish; else U end;
+    U_limscale = (U_lim-step_start)/(step_finish-step_start);
+  in
+    Y == min_out+(max_out-min_out)*(3-2*U_limscale)*U_limscale*U_limscale;
+  end
+end
+    
+end

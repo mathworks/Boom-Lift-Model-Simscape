@@ -1,0 +1,166 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Boom Lift Crawler Chassis with Hydraulic Actuation (Test Harness)</title><meta name="generator" content="MATLAB 9.9"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2020-09-20"><meta name="DC.source" content="sm_boom_lift_crawler_harness_ground_hydr.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Boom Lift Crawler Chassis with Hydraulic Actuation (Test Harness)</h1><!--introduction--><p>This example models the hydraulic actuation system for the chassis of a boom lift.  Four actuators extend and contract to position the outriggers, and two other actuators control the separation of the two tracks.  This model is used to examine the hydraulic system.</p><p>This model is a test harness from the main model (see <a href="matlab:web('sm_boom_lift_crawler.html');">documentation</a>).</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Model</a></li><li><a href="#2">Component Under Test</a></li><li><a href="#5">Simulation Results: Chassis Sequence</a></li></ul></div><h2 id="1">Model</h2><p><a href="matlab:sm_boom_lift_crawler_harness_open('ground%20manifold%20hydr');">Open Model</a></p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_ground_hydr_01.png" alt=""> <h2 id="2">Component Under Test</h2><p>The component under test is a hydraulic actuation system for the chassis of a boom lift. This includes the outriggers and track extension actuators.</p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_ground_hydr_02.png" alt=""> <p>Double-acting cylinders with three pilot check valves extend to lower the outrigger. The pilot check valves lock the cylinder in place when the 4-way valve returns to center, even if a hose upstream bursts so the outriggers don&#8217;t collapse. Two pilot check valves are on the extend side of the cylinder in case one fails while the system is in use.</p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_ground_hydr_03.png" alt=""> <p>The track actuation system inculudes a four-way valve that determines if the track separation increases or decreases. There are no valves to lock the cylinders mid-stroke.</p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_ground_hydr_04.png" alt=""> <h2 id="5">Simulation Results: Chassis Sequence</h2><p>The plots below shows the result of a test sequence that extends and retracts all actuators in the chassis (outriggers and tracks).  The test sequence includes signals for all valves so that the test sequence can also be run on the full model.</p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_ground_hydr_05.png" alt=""> <p>Below is the corresponding prescribed motion for the test.  This allows testing on a full model that has motion for any combination of the actuators.</p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_ground_hydr_06.png" alt=""> <p>Motion of the outrigger actuators along with applied actuator force.</p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_ground_hydr_07.png" alt=""> <p>Hydraulic pressures in the outrigger actuators along with actuator position.</p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_ground_hydr_08.png" alt=""> <p>Motion of the track actuators along with applied actuator force.</p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_ground_hydr_09.png" alt=""> <p>Hydraulic pressures in the track actuators along with actuator position.</p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_ground_hydr_10.png" alt=""> <p class="footer">Copyright 2020 The MathWorks, Inc.<br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2020b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Boom Lift Crawler Chassis with Hydraulic Actuation (Test Harness)
+%
+% This example models the hydraulic actuation system for the chassis of a
+% boom lift.  Four actuators extend and contract to position the
+% outriggers, and two other actuators control the separation of the two
+% tracks.  This model is used to examine the hydraulic system.
+%
+% This model is a test harness from the main model (see
+% <matlab:web('sm_boom_lift_crawler.html'); documentation>).
+%
+% Copyright 2020 The MathWorks, Inc.
+
+
+%% Model
+% <matlab:sm_boom_lift_crawler_harness_open('ground%20manifold%20hydr'); Open Model>
+
+sm_boom_lift_crawler_harness_open('ground manifold hydr')
+
+set_param(find_system(bdroot,'FindAll', 'on','type','annotation','Tag','ModelFeatures'),'Interpreter','off')
+
+
+%% Component Under Test
+%
+% The component under test is a hydraulic actuation system for the chassis
+% of a boom lift. This includes the outriggers and track extension
+% actuators. 
+%
+
+open_system([bdroot '/Ground Manifold'],'force');
+%%
+%
+% Double-acting cylinders with three pilot check valves extend to lower the
+% outrigger. The pilot check valves lock the cylinder in place when the
+% 4-way valve returns to center, even if a hose upstream bursts so the
+% outriggers don’t collapse. Two pilot check valves are on the extend side
+% of the cylinder in case one fails while the system is in use.
+
+open_system([bdroot '/Ground Manifold/Ground Valve Block Right'],'force');
+
+%%
+%
+% The track actuation system inculudes a four-way valve that determines if
+% the track separation increases or decreases. There are no valves to lock
+% the cylinders mid-stroke.
+
+open_system([bdroot '/Ground Manifold/Ground Valve Block Left'],'force');
+
+%% Simulation Results: Chassis Sequence
+%%
+%
+% The plots below shows the result of a test sequence that extends and
+% retracts all actuators in the chassis (outriggers and tracks).  The test
+% sequence includes signals for all valves so that the test sequence can
+% also be run on the full model.
+%
+
+sm_boom_lift_crawler_settest('chassis test');
+sm_boom_lift_crawler_plot11valveseq(tVec,oVec)
+
+%%
+%
+% Below is the corresponding prescribed motion for the test.  This allows
+% testing on a full model that has motion for any combination of the
+% actuators.
+
+sm_boom_lift_crawler_plot12motionseq(motion)
+out = sim(bdroot);
+
+%%
+% Motion of the outrigger actuators along with applied actuator force.
+sm_boom_lift_crawler_plot01chassispf_outr
+
+%%
+% Hydraulic pressures in the outrigger actuators along with actuator position.
+
+sm_boom_lift_crawler_plot06chassispab_outr
+
+%%
+% Motion of the track actuators along with applied actuator force.
+
+sm_boom_lift_crawler_plot02chassispf_track
+
+%%
+% Hydraulic pressures in the track actuators along with actuator position.
+
+sm_boom_lift_crawler_plot07chassispab_track
+
+
+%%
+%clear all
+%close all
+bdclose all
+
+##### SOURCE END #####
+--></body></html>

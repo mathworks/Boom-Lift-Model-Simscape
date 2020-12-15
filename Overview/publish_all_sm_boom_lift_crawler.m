@@ -1,0 +1,86 @@
+% Publish all publish scripts for testing
+% Copyright 2020 The MathWorks, Inc.
+
+prompt = {'Enter comment for test'};
+dlgtitle = 'Comment for test sweep';
+dims = [1 35];
+definput = {''};
+answer = inputdlg(prompt,dlgtitle,dims,definput);
+now_string = datestr(now,'yymmdd_HHMM');
+
+cd(fileparts(which(mfilename)))
+
+publish_folder_list = {...
+    'H_Basket_Rotate'...
+    'H_Basket_Level'...
+    'H_Basket_Level_Tilt'...
+    'H_Lift'...
+    'H_Extend'...
+    'H_Turret'...
+    'H_Jib_3D'...
+    'H_Jib_1D'...
+    'H_Track'...
+    'H_Outrigger'...
+    'H_Ground'...
+    'H_Sky'...
+    'M_Boom'...
+    'M_Basket'...
+    'M_Chassis'...
+    'M_Full'...
+    'M_Flex_Boom'...
+    'Main_Abstract'...
+    'Main'...
+    };
+
+timing_data = [];
+
+tPubStart = tic;
+for pf_i = 1:length(publish_folder_list)
+    % Open all libraries to avoid screenshot of host library in HTML
+    open_system('sm_boom_lift_crawler_lib_lift');
+    open_system('sm_boom_lift_crawler_lib_actuators');
+    open_system('sm_boom_lift_crawler_lib');
+    open_system('sm_boom_lift_crawler_lib_chassis');
+    open_system('sm_boom_lift_crawler_lib_boom');
+    open_system('sm_boom_lift_crawler_lib_basket');
+    
+    warning('off','Simulink:Engine:MdlFileShadowedByFile');
+    warning('off','Simulink:Harness:WarnABoutNameShadowingOnActivation');
+    cd(fileparts(which(mfilename)))
+    cd(publish_folder_list{pf_i});
+    filelist_m=dir('*.m');
+    filenames_m = {filelist_m.name};
+    publish(filenames_m{1},'showCode',false)
+    timing_data(pf_i).model    = strrep(filenames_m{1},'.m','');
+    timing_data(pf_i).test     = motion.name;
+    timing_data(pf_i).stopTime = motion.StopTime; 
+    timing_data(pf_i).numSteps = length(out.tout); 
+    timing_data(pf_i).Elapsed_Time = Elapsed_Sim_Time;
+end
+finish_time = toc(tPubStart);
+
+cd(fileparts(which(mfilename)))
+res_out_titles = {'Run' 'Model' 'Test' 'Time' 'Elap' '# Steps'};
+for testnum=1:length(timing_data)
+    res_out(testnum,1:6) = {...
+        num2str(testnum), ...
+        timing_data(testnum).model, ...
+        timing_data(testnum).test, ...
+        timing_data(testnum).stopTime, ...
+        timing_data(testnum).Elapsed_Time, ...
+        timing_data(testnum).numSteps};
+end
+
+sheetname = [version('-release') '_' now_string];
+computername = getenv('COMPUTERNAME');
+filename = which('sm_boom_lift_crawler_results.xlsx');
+xlswrite(filename,res_out_titles,sheetname,'A1');
+xlswrite(filename,res_out,sheetname,'A2');
+xlswrite(filename,{['''' datestr(now)]},sheetname,'H1');
+xlswrite(filename,{['''' computername]},sheetname,'H2');
+xlswrite(filename,{['''' version]},sheetname,'H3');
+xlswrite(filename,answer,sheetname,'H4');
+xlswrite(filename,finish_time,sheetname,'H5');
+
+cd(fileparts(which('sm_boom_lift_crawler')))
+
