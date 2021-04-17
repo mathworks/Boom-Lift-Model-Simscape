@@ -3,7 +3,7 @@ function sm_boom_lift_crawler_setsolver(mdl,varfixed)
 %   Set solver settings in sm_boom_lift_crawler models for variable or
 %   fixed-step simulation.
 %
-% Copyright 2020 The MathWorks, Inc.
+% Copyright 2020-2021 The MathWorks, Inc.
 
 solverBlock_pth = find_system(mdl,'FollowLinks','on','LookUnderMasks','on', 'SubClassName', 'solver');
 

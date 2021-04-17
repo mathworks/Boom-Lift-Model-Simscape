@@ -7,7 +7,7 @@
 % This model is a test harness from the main model (see
 % <matlab:web('sm_boom_lift_crawler.html'); documentation>).
 %
-% Copyright 2020 The MathWorks, Inc.
+% Copyright 2020-2021 The MathWorks, Inc.
 
 
 %% Model
@@ -24,7 +24,7 @@ set_param(find_system(bdroot,'FindAll', 'on','type','annotation','Tag','ModelFea
 % network contains a four-way valve to control the rotation direction and
 % two counterbalance valves. The counterbalance valves lock the actuator in
 % place when the 4-way valve returns to center. The lock persists if
-% pressure upstream drops so the basket doesn’t begin to drift while the
+% pressure upstream drops so the basket doesnâ€™t begin to drift while the
 % crew is still at work.
 
 open_system([bdroot '/Basket Rotate']);

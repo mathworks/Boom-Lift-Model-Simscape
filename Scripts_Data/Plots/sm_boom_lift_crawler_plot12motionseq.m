@@ -3,7 +3,7 @@ function sm_boom_lift_crawler_plot12motionseq(motion)
 %% Plot Description:
 %
 
-% Copyright 2020 The MathWorks, Inc.
+% Copyright 2020-2021 The MathWorks, Inc.
 
 %% Plot results
 % Reuse figure if it exists, else create new figure

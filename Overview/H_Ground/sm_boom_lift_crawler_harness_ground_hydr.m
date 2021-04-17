@@ -8,7 +8,7 @@
 % This model is a test harness from the main model (see
 % <matlab:web('sm_boom_lift_crawler.html'); documentation>).
 %
-% Copyright 2020 The MathWorks, Inc.
+% Copyright 2020-2021 The MathWorks, Inc.
 
 
 %% Model
@@ -32,7 +32,7 @@ open_system([bdroot '/Ground Manifold'],'force');
 % Double-acting cylinders with three pilot check valves extend to lower the
 % outrigger. The pilot check valves lock the cylinder in place when the
 % 4-way valve returns to center, even if a hose upstream bursts so the
-% outriggers don’t collapse. Two pilot check valves are on the extend side
+% outriggers donâ€™t collapse. Two pilot check valves are on the extend side
 % of the cylinder in case one fails while the system is in use.
 
 open_system([bdroot '/Ground Manifold/Ground Valve Block Right'],'force');
