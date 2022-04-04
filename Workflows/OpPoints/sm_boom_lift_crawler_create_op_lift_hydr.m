@@ -1,6 +1,6 @@
 % Script to create operating point after initial transient dies down
 %
-% Copyright 2020-2021 The MathWorks, Inc.
+% Copyright 2020-2022 The MathWorks, Inc.
 
 cd(fileparts(which(mfilename)))
 

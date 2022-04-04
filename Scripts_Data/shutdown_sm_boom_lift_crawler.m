@@ -1,5 +1,5 @@
 % Shutdown script for startup_sm_boom_lift_crawler
-% Copyright 2020-2021 The MathWorks, Inc.
+% Copyright 2020-2022 The MathWorks, Inc.
 
 cd(fileparts(which('sm_boom_lift_crawler.slx')))
 cd('Libraries')

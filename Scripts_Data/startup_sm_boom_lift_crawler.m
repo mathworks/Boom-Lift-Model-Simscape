@@ -1,5 +1,5 @@
 % Startup script for startup_sm_boom_lift_crawler
-% Copyright 2020-2021 The MathWorks, Inc.
+% Copyright 2020-2022 The MathWorks, Inc.
 
 MDatabase = sm_boom_lift_crawler_motion;
 ODatabase = sm_boom_lift_crawler_operator_seq;

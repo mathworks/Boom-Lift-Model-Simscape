@@ -8,7 +8,7 @@ function [tVec, oVec] = sm_boom_lift_crawler_vseq_fulltest
 % * Valve actuator time constants range from a fraction of a second 
 % (selector and deviator valves) to 5 s (proportional valves).
 
-% Copyright 2020-2021 The MathWorks, Inc.
+% Copyright 2020-2022 The MathWorks, Inc.
 
 %% Valve Operation Commands:
 o.fwd = 1; % Command to operate valve in forward direction

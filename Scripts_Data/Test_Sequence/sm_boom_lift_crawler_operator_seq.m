@@ -1,6 +1,6 @@
 function operator_seq = sm_boom_lift_crawler_operator_seq
 % Function to define motion profiles for testing
-% Copyright 2020-2021 The MathWorks, Inc.
+% Copyright 2020-2022 The MathWorks, Inc.
 
 turret.t  = [0 25.5];
 turret.q  = [0 -158.9];
