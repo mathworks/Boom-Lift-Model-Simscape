@@ -29,25 +29,51 @@ set_param(find_system(bdroot,'FindAll', 'on','type','annotation','Tag','ModelFea
 open_system([bdroot '/Telescoping Boom Flex'],'force');
 
 %%
-% The beam has three nested segments.
+% For each method, the beam has three nested segments.
 
 open_system([bdroot '/Telescoping Boom Flex/Classical'],'force');
 
 %%
-% The Flexible Rectangular Beam Block ("Mid Beam" block in this image) uses
-% classical beam theory to model the flexible portion of the beam.  The
-% overlapping section of the nested beams is assumed to be rigid.
-%
-% In the ROM variant, the "Mid Beam" block is replaced with a Reduced Order
+% The Flexible Rectangular Beam Block ("Middle Beam" block in the image
+% below) uses classical beam theory to model the flexible portion of the
+% beam.  The overlapping section of the nested beams is assumed to be
+% rigid.
+open_system([bdroot '/Telescoping Boom Flex/Classical/Mid Beam']);
+
+%%
+% In the ROM variant, the "Middle Beam" block is replaced with a Reduced Order
 % Flexible Solid block which uses stiffness and damping matrices to model
 % the flexible body behavior
 
-open_system([bdroot '/Telescoping Boom Flex/Classical/Mid Beam']);
+set_param([bdroot '/Telescoping Boom Flex'],'popup_flexType','ROM');
+open_system([bdroot '/Telescoping Boom Flex/ROM/Mid Beam']);
 
-%% Simulation Results: Tilt Sequence
+%% Simulation Results: Tilt Sequence, Classical
 %%
 %
-% The plot below shows a test sequence designed to tilt the boom.
+% The plot below shows a test sequence designed to tilt the boom.  We apply
+% this sequence to the model with the classical flexible beam.
+
+set_param([bdroot '/Telescoping Boom Flex'],'popup_flexType','Classical');
+
+sm_boom_lift_crawler_settest('Tilt test');
+sm_boom_lift_crawler_plot12motionseq(motion)
+open_system([bdroot '/Boom Deflection'])
+open_system([bdroot '/Spectrum Analyzer'])
+out = sim(bdroot);
+
+%%
+% Motion of the lift, extend, and jib actuators along with applied
+% actuator force.
+sm_boom_lift_crawler_plot03boompf_lift
+
+%% Simulation Results: Tilt Sequence, ROM
+%%
+%
+% The plot below shows a test sequence designed to tilt the boom.   We apply
+% this sequence to the model with the ROM flexible beam.
+
+set_param([bdroot '/Telescoping Boom Flex'],'popup_flexType','ROM');
 
 sm_boom_lift_crawler_settest('Tilt test');
 sm_boom_lift_crawler_plot12motionseq(motion)
@@ -65,6 +91,7 @@ sm_boom_lift_crawler_plot03boompf_lift
 %
 % The plot below shows the variation in frequency response.
 
+set_param([bdroot '/Telescoping Boom Flex'],'popup_flexType','Classical');
 close_system([bdroot '/Spectrum Analyzer'])
 close_system([bdroot '/Boom Deflection'])
 sm_boom_lift_crawler_settest('chassis test');

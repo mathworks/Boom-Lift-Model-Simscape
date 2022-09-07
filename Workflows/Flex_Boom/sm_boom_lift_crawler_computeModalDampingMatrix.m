@@ -18,8 +18,8 @@ function C = sm_boom_lift_crawler_computeModalDampingMatrix(dampingRatio,K,M)
 % check that the first six eigenvalues are close enough to zero. Then
 % replace them with exact 0 values.
 
-    %assert(all(abs(d(1:6))/abs(d(7)) < 1e-9),'Error due to "zero" eigenvalues.');
-    %d(1:6) = 0;
+    assert(all(abs(d(1:6))/abs(d(7)) < 1e-9),'Error due to "zero" eigenvalues.');
+    d(1:6) = 0;
 
 % Vectors of generalized masses and natural frequencies
     MV = M*V;
