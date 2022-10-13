@@ -17,7 +17,7 @@ set_param([bdroot '/Rate Transition'],'Commented','off');
 set_param([bdroot '/Spectrum Analyzer'],'Commented','off');
 close_system([bdroot '/Spectrum Analyzer'])
 
-set_param(find_system(bdroot,'FindAll', 'on','type','annotation','Tag','ModelFeatures'),'Interpreter','off')
+set_param(find_system(bdroot,'MatchFilter',@Simulink.match.allVariants,'FindAll', 'on','type','annotation','Tag','ModelFeatures'),'Interpreter','off')
 
 
 %% Telescoping Flexible Boom

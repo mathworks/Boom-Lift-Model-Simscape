@@ -5,10 +5,17 @@ function sm_boom_lift_crawler_setsolver(mdl,varfixed)
 %
 % Copyright 2020-2022 The MathWorks, Inc.
 
-solverBlock_pth = find_system(mdl,'FollowLinks','on','LookUnderMasks','on', 'SubClassName', 'solver');
+f    = Simulink.FindOptions('FollowLinks',1,'LookUnderMasks','all');
+solverBlock_pth = getfullname(Simulink.findBlocks(mdl, 'SubClassName', 'solver',f));
 
-ls_hydr_ind = find(startsWith(solverBlock_pth,[mdl '/Hydr Config']));
-ls_mech_ind = find(startsWith(solverBlock_pth,[mdl '/Mech Config']));
+% If only one element is found, getfullname returns char
+% Convert to cell
+if (ischar(solverBlock_pth))
+    solverBlock_pth = {solverBlock_pth};
+end
+
+ls_hydr_ind = find(startsWith(solverBlock_pth,[mdl '/Hydr']));
+ls_mech_ind = find(startsWith(solverBlock_pth,[mdl '/Mech']));
 
 if(~isempty(ls_hydr_ind))
     ls_hydr = solverBlock_pth{ls_hydr_ind};
@@ -21,8 +28,6 @@ if(~isempty(ls_mech_ind))
 else
     ls_mech = [];
 end
-
-%solverBlock_pth = find_system(mdl,'FollowLinks','on','LookUnderMasks','on', 'SubClassName', 'solver');
 
 if strcmpi(varfixed,'variable')
     set_param(mdl,'Solver','ode23t');

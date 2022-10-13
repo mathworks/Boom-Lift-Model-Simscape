@@ -4,6 +4,7 @@
 
 cd(fileparts(which(mfilename)))
 
+sm_boom_lift_crawler_harness_open('hydr model');
 sm_boom_lift_crawler_setsolver(bdroot,'variable')
 
 set_param(bdroot,'SimscapeLogType','All')
