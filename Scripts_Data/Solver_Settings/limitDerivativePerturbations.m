@@ -4,7 +4,7 @@ function limitDerivativePerturbations(varargin)
 % Call with () to limit perturbations. Call with ([]) to set back to 
 % defaults. 
 
-% Copyright 2020-2022 The MathWorks, Inc.
+% Copyright 2020-2023 The MathWorks, Inc.
 
 plimitDerivativePerturbations(varargin{:});
 

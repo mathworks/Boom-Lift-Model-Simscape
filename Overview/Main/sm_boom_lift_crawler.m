@@ -13,7 +13,7 @@
 % individual actuation systems.  Some test models use inverse dynamics to
 % refine the requirements for the actuators.
 %
-% Copyright 2020-2022 The MathWorks, Inc.
+% Copyright 2020-2023 The MathWorks, Inc.
 
 
 %% Model

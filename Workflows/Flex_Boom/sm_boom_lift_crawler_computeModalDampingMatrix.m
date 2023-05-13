@@ -1,5 +1,5 @@
 function C = sm_boom_lift_crawler_computeModalDampingMatrix(dampingRatio,K,M)
-% Copyright 2020-2022 The MathWorks, Inc.
+% Copyright 2020-2023 The MathWorks, Inc.
 
 % To avoid numerical issues (such as complex eigenvalues with very small
 % imaginary parts), make the matrices exactly symmetric.

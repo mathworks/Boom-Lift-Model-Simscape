@@ -6,7 +6,7 @@
 % is used to identify natural frequencies at different levels of boom
 % extension.
 %
-% Copyright 2020-2022 The MathWorks, Inc.
+% Copyright 2020-2023 The MathWorks, Inc.
 
 
 %% Model

@@ -1,6 +1,6 @@
 % Code to load parameters for sm_boom_lift_crawler
 %
-% Copyright 2020-2022 The MathWorks, Inc.
+% Copyright 2020-2023 The MathWorks, Inc.
 
 %% Multibody Parameters
 % 0. Outrigger Swivel Positions

@@ -3,7 +3,7 @@ function daesscSetMultibody(varargin)
 % containing Simscape Multibody components. Call with () to configure for
 % use with multibody. Call with ([]) to set back to defaults. 
 
-% Copyright 2020-2022 The MathWorks, Inc.
+% Copyright 2020-2023 The MathWorks, Inc.
 
 pdaesscSetMultibody(varargin{:});
     

@@ -3,7 +3,7 @@ function sm_boom_lift_crawler_setsolver(mdl,varfixed)
 %   Set solver settings in sm_boom_lift_crawler models for variable or
 %   fixed-step simulation.
 %
-% Copyright 2020-2022 The MathWorks, Inc.
+% Copyright 2020-2023 The MathWorks, Inc.
 
 f    = Simulink.FindOptions('FollowLinks',1,'LookUnderMasks','all');
 solverBlock_pth = getfullname(Simulink.findBlocks(mdl, 'SubClassName', 'solver',f));

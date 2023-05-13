@@ -5,7 +5,7 @@
 % <span style="font-size:10pt">
 % <tr><b><u>Model</u></b><br>
 % <tr>Controls Model: <a href="matlab:web('sm_boom_lift_crawler_abstract.html');">Documentation</a>, <a href="matlab:open_system('sm_boom_lift_crawler_abstract');">Model</a><br>
-% <tr>Hydraulics Model: <a href="matlab:web('sm_boom_lift_crawler.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('main model');">Model</a><br>
+% <tr>Hydraulics Model: <a href="matlab:web('sm_boom_lift_crawler.html');">Documentation</a>, <a href="matlab:open_system('sm_boom_lift_crawler');">Model</a><br>
 % <br>
 % <tr><b><u>Test Harnesses: Actuator Requirements</u></b><br>
 % <tr>1.   Full Lift: <a href="matlab:web('sm_boom_lift_crawler_harness_full_motion.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('full motion');">Model</a><br>
@@ -37,5 +37,5 @@
 % </html>
 % 
 
-% Copyright 2020-2022 The MathWorks(TM), Inc.
+% Copyright 2020-2023 The MathWorks(TM), Inc.
 
