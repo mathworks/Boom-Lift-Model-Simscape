@@ -18,7 +18,8 @@ permit manual testing of the algorithm
 
 Open the project file sm_boom_lift_crawler.prj to begin.
 
-[![View Boom Lift Model in Simscape on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/84390-boom-lift-model-in-simscape)
+View on File Exchange: [![View Boom Lift Model in Simscape on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/84390-boom-lift-model-in-simscape)  
+You can also open in MATLAB Online: [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=mathworks/Boom-Lift-Model-Simscape&project=sm_boom_lift_crawler.prj)
 
 ## **Boom Lift Model with Hydraulics - Animation**
 ![](Overview/sm_boom_lift_crawler_mechExpAnim.png)

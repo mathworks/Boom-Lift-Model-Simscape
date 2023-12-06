@@ -1,12 +1,17 @@
-
-<!DOCTYPE html
-  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-   <!--
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>Basket with Ideal Actuation (Test Harness)</title><meta name="generator" content="MATLAB 9.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2023-03-18"><meta name="DC.source" content="sm_boom_lift_crawler_harness_basket_motion.m"><style type="text/css">
+      -->
+<title>Basket with Ideal Actuation (Test Harness)</title>
+<meta name="generator" content="MATLAB 23.2">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2023-09-14">
+<meta name="DC.source" content="sm_boom_lift_crawler_harness_basket_motion.m">
+<style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -67,7 +72,58 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>Basket with Ideal Actuation (Test Harness)</h1><!--introduction--><p>This example shows the basket portion of a boom lift with ideal actuation. The mechanism can raise and orient the basket relative to the boom. The model is used to identify requirements for the actuators.</p><p>This model is a test harness from the main model (see <a href="matlab:web('sm_boom_lift_crawler.html');">documentation</a>)</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Model</a></li><li><a href="#2">Component Under Test</a></li><li><a href="#6">Simulation Results: Jib Sequence</a></li><li><a href="#9">Simulation Results: Tilt Sequence</a></li><li><a href="#12">Simulation Results: Rotate Sequence</a></li></ul></div><h2 id="1">Model</h2><p><a href="matlab:sm_boom_lift_crawler_harness_open('basket%motion');">Open Model</a></p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_01.png" alt=""> <h2 id="2">Component Under Test</h2><p>The component under test is the mechanism for lifting and rotating the basket of a boom lift.</p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_02.png" alt=""> <p>The jib is a four-bar linkage that can raised or lowered for fine positioning of the jib.</p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_03.png" alt=""> <p>A rotational actuator allows the basket to rotate about the end of the boom.</p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_04.png" alt=""> <h2 id="6">Simulation Results: Jib Sequence</h2><p>The plot below shows a test sequence designed to extend the jib. Motions of all joints are specified so that this sequence can be used on a full model of the boom lift that uses prescribed motion for any combination of the actuators.</p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_05.png" alt=""> <p>Motion of the lift, extend, and jib actuators along with applied actuator force.</p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_06.png" alt=""> <h2 id="9">Simulation Results: Tilt Sequence</h2><p>The plot below shows a test sequence designed to tilt the boom. The extension of the slave cylinder is controlled by a master cylinder (not modeled) to keep the basket level. Motions of all joints are specified so that this sequence can be used on a full model of the boom lift that uses prescribed motion for any combination of the actuators.</p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_07.png" alt=""> <p>Motion of the lift, extend, and jib actuators along with applied actuator force.</p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_08.png" alt=""> <h2 id="12">Simulation Results: Rotate Sequence</h2><p>The plot below shows a test sequence designed to rotate the basket. Motions of all joints are specified so that this sequence can be used on a full model of the boom lift that uses prescribed motion for any combination of the actuators.</p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_09.png" alt=""> <p>Motion of actuators along with applied actuator force.</p><img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_10.png" alt=""> <p class="footer">Copyright 2020-2023 The MathWorks, Inc.<br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2023a</a><br></p></div><!--
+  </style>
+</head>
+<body>
+<div class="content">
+<h1>Basket with Ideal Actuation (Test Harness)</h1>
+<!--introduction-->
+<p>This example shows the basket portion of a boom lift with ideal actuation. The mechanism can raise and orient the basket relative to the boom. The model is used to identify requirements for the actuators.</p>
+<p>This model is a test harness from the main model (see <a href="matlab:web('sm_boom_lift_crawler.html');">documentation</a>)</p>
+<!--/introduction-->
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Model</a>
+</li>
+<li>
+<a href="#2">Component Under Test</a>
+</li>
+<li>
+<a href="#6">Simulation Results: Jib Sequence</a>
+</li>
+<li>
+<a href="#9">Simulation Results: Tilt Sequence</a>
+</li>
+<li>
+<a href="#12">Simulation Results: Rotate Sequence</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Model</h2>
+<p>
+<a href="matlab:sm_boom_lift_crawler_harness_open('basket%motion');">Open Model</a>
+</p>
+<img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_01.png" alt=""> <h2 id="2">Component Under Test</h2>
+<p>The component under test is the mechanism for lifting and rotating the basket of a boom lift.</p>
+<img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_02.png" alt=""> <p>The jib is a four-bar linkage that can raised or lowered for fine positioning of the jib.</p>
+<img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_03.png" alt=""> <p>A rotational actuator allows the basket to rotate about the end of the boom.</p>
+<img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_04.png" alt=""> <h2 id="6">Simulation Results: Jib Sequence</h2>
+<p>The plot below shows a test sequence designed to extend the jib. Motions of all joints are specified so that this sequence can be used on a full model of the boom lift that uses prescribed motion for any combination of the actuators.</p>
+<img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_05.png" alt=""> <p>Motion of the lift, extend, and jib actuators along with applied actuator force.</p>
+<img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_06.png" alt=""> <h2 id="9">Simulation Results: Tilt Sequence</h2>
+<p>The plot below shows a test sequence designed to tilt the boom. The extension of the slave cylinder is controlled by a master cylinder (not modeled) to keep the basket level. Motions of all joints are specified so that this sequence can be used on a full model of the boom lift that uses prescribed motion for any combination of the actuators.</p>
+<img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_07.png" alt=""> <p>Motion of the lift, extend, and jib actuators along with applied actuator force.</p>
+<img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_08.png" alt=""> <h2 id="12">Simulation Results: Rotate Sequence</h2>
+<p>The plot below shows a test sequence designed to rotate the basket. Motions of all joints are specified so that this sequence can be used on a full model of the boom lift that uses prescribed motion for any combination of the actuators.</p>
+<img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_09.png" alt=""> <p>Motion of actuators along with applied actuator force.</p>
+<img vspace="5" hspace="5" src="sm_boom_lift_crawler_harness_basket_motion_10.png" alt=""> <p class="footer">Copyright 2020-2023 The MathWorks, Inc.<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2023b</a>
+<br>
+</p>
+</div>
+<!--
 ##### SOURCE BEGIN #####
 %% Basket with Ideal Actuation (Test Harness)
 %
@@ -166,4 +222,6 @@ sm_boom_lift_crawler_plot05boompf_rotate
 bdclose all
 
 ##### SOURCE END #####
---></body></html>
+-->
+</body>
+</html>
