@@ -2,7 +2,7 @@ function sm_boom_lift_crawler_settest(testname)
 % Code to load test sequence for sm_boom_lift_crawler
 % Valve, motion, and operator sequence
 
-% Copyright 2020-2023 The MathWorks, Inc.
+% Copyright 2020-2024 The MathWorks, Inc.
 
 switch lower(testname)
     case 'full test'

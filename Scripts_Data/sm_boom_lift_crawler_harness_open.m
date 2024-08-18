@@ -1,7 +1,7 @@
 function sm_boom_lift_crawler_harness_open(harness_name)
 % Function to open selected test harness
 
-% Copyright 2020-2023 The MathWorks, Inc.
+% Copyright 2020-2024 The MathWorks, Inc.
 
 % Libraries with which harnesses are associated
 lift_lib        = 'sm_boom_lift_crawler_lib_lift';

@@ -8,7 +8,7 @@ function sm_boom_lift_crawler_flex_boom_bodeplot(modelname,beamtype,doSweep)
 % Analysis Tool, on the Linear Analysis tab, in the Linearize section,
 % click Bode.
 
-% Copyright 2020-2023 The MathWorks, Inc.
+% Copyright 2020-2024 The MathWorks, Inc.
 
 %% Open the model and set circuit parameters
 open_system(modelname)

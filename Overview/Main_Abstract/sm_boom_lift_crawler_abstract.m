@@ -11,7 +11,7 @@
 % movements when the lift is in certain positions.  Simulink dashboard
 % blocks permit manual testing of the algorithm
 %
-% Copyright 2020-2023 The MathWorks, Inc.
+% Copyright 2020-2024 The MathWorks, Inc.
 
 
 %% Model

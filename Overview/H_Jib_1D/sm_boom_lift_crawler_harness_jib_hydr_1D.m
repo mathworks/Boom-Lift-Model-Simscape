@@ -9,7 +9,7 @@
 % This model is a test harness from the main model (see
 % <matlab:web('sm_boom_lift_crawler.html'); documentation>).
 %
-% Copyright 2020-2023 The MathWorks, Inc.
+% Copyright 2020-2024 The MathWorks, Inc.
 
 
 %% Model
