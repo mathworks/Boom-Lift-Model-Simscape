@@ -1,6 +1,6 @@
 % Code to load parameters for sm_boom_lift_crawler
 %
-% Copyright 2020-2023 The MathWorks, Inc.
+% Copyright 2020-2022 The MathWorks, Inc.
 
 %% Line Sizes:
 % Line Diameters:
@@ -66,14 +66,14 @@ valves.counterbalance.c2.k = 1250 / valves.control.l.max; % psi/in
 
 % Stick Boom Extend Cylinder (c3):
 valves.counterbalance.c3.pr = 1; % --
-valves.counterbalance.c3.pbr = 0; % --
+valves.counterbalance.c3.pbr = 0.001; % --
 valves.counterbalance.c3.ps = 3500; % psi
 valves.counterbalance.c3.k = 1250 / valves.control.l.max; % psi; % psi
 
 % Jib Extend Cylinder (c4):
 valves.counterbalance.c4.pr.i = 1; % --
 valves.counterbalance.c4.pr.ii = 1; % --
-valves.counterbalance.c4.pbr = 0; % --
+valves.counterbalance.c4.pbr = 0.001; % --
 valves.counterbalance.c4.ps.i = 4000; % psi
 valves.counterbalance.c4.ps.ii = 4000; % psi
 valves.counterbalance.c4.k = 1250 / valves.control.l.max; % psi; % psi
@@ -89,7 +89,7 @@ valves.counterbalance.r2.k = 1750 / valves.control.l.max; % psi; % psi
 % Basket Leveling Cylinder, Master (c5):
 valves.counterbalance.c5.pr.i = 5; % --
 valves.counterbalance.c5.pr.ii = 10; % --
-valves.counterbalance.c5.pbr = 0; % --
+valves.counterbalance.c5.pbr = 0.001; % --
 valves.counterbalance.c5.ps.i = 2000; % psi
 valves.counterbalance.c5.ps.ii = 750; % psi
 valves.counterbalance.c5.k = 750 / valves.control.l.max; % psi; % psi
@@ -97,7 +97,7 @@ valves.counterbalance.c5.k = 750 / valves.control.l.max; % psi; % psi
 % Basket Leveling Cylinder, Slave (c6):
 valves.counterbalance.c6.pr.i = 5; % --
 valves.counterbalance.c6.pr.ii = 10; % --
-valves.counterbalance.c6.pbr = 0; % --
+valves.counterbalance.c6.pbr = 0.001; % --
 valves.counterbalance.c6.ps.i = 2000; % psi
 valves.counterbalance.c6.ps.ii = 750; % psi
 valves.counterbalance.c6.k = 750 / valves.control.l.max; % psi; % psi

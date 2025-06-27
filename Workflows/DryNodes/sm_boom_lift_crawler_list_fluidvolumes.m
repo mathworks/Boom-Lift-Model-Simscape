@@ -1,9 +1,10 @@
 % Script to list constant volume chamber blocks
-% Copyright 2020-2023 The MathWorks, Inc.
+% Copyright 2020-2022 The MathWorks, Inc.
 
-f = Simulink.FindOptions('regexp',true,'FollowLinks',true);
+f = Simulink.FindOptions('regexp',true,'FollowLinks',true,'IncludeCommented',true,'LookUnderMasks','All');
 
-node_vols = Simulink.findBlocks(bdroot,'ReferenceBlock','.*/Constant Volume Hydraulic Chamber',f);
+node_vols = Simulink.findBlocks(bdroot,'ReferenceBlock','.*/.*Volume Chamber.*',f);
+%node_vols = Simulink.findBlocks(bdroot,'ReferenceBlock','.*/.*Translational.*',f);
 
 for i=1:length(node_vols)
     namestr = get_param((node_vols(i)),'Name');

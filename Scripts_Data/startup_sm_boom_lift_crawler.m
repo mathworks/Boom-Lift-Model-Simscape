@@ -1,5 +1,5 @@
 % Startup script for startup_sm_boom_lift_crawler
-% Copyright 2020-2023 The MathWorks, Inc.
+% Copyright 2020-2025 The MathWorks, Inc.
 
 MDatabase = sm_boom_lift_crawler_motion;
 ODatabase = sm_boom_lift_crawler_operator_seq;
@@ -31,6 +31,7 @@ limitDerivativePerturbations([])
 daesscSetMultibody([])
 %}
 
+web('sm_boom_lift_crawler_Demo_Script.html');
 open_system('sm_boom_lift_crawler_abstract');
 sm_boom_lift_crawler_app
 

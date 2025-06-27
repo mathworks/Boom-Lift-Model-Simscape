@@ -2,7 +2,7 @@ function arm = sm_boom_lift_crawler_generate_ROM(stlFile,origins,faceIDs,meshSiz
 % Calculate reduced order flexible solid properties
 % for sm_boom_lift_crawler
 %
-% Copyright 2020-2023 The MathWorks, Inc.
+% Copyright 2020-2022 The MathWorks, Inc.
 
 showplots = false;
 if(nargin == 7)
