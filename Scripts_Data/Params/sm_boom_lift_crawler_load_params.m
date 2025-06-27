@@ -1,6 +1,6 @@
 % Code to load parameters for sm_boom_lift_crawler
 %
-% Copyright 2020-2024 The MathWorks, Inc.
+% Copyright 2020-2025 The MathWorks, Inc.
 
 sm_boom_lift_crawler_params_multibody
 sm_boom_lift_crawler_params_hydr

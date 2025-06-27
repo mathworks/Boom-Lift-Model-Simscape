@@ -1,8 +1,8 @@
 % Script to list pipeline blocks
-% Copyright 2020-2024 The MathWorks, Inc.
+% Copyright 2020-2025 The MathWorks, Inc.
 
-f = Simulink.FindOptions('regexp',true,'IncludeCommented',false);
-pipe_h = Simulink.findBlocks([bdroot '/Actuators'],'ReferenceBlock','.*Hydraulic Pipeline',f);
+f = Simulink.FindOptions('regexp',true,'IncludeCommented',true,'FollowLinks',true);
+pipe_h = Simulink.findBlocks(bdroot ,'ReferenceBlock','.*Pipe.*IL.*',f);
 
 if(pipe_h>0)
 for i=1:length(pipe_h)

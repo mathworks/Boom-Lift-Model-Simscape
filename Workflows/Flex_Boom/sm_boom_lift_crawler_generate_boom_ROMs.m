@@ -1,7 +1,7 @@
 % Calculate Reduced Order Flexible Solid (ROFS) properties
 % for telescopic beam in sm_boom_lift_crawler
 %
-% Copyright 2020-2024 The MathWorks, Inc.
+% Copyright 2020-2025 The MathWorks, Inc.
 
 %% General Settings
 meshSize  = [0.02 0.2]*2;

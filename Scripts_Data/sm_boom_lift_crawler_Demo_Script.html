@@ -6,10 +6,10 @@
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
       -->
-<title>Boom Lift Crawler Demo Script</title>
+<title>Boom Lift Crawler with Simscape</title>
 <meta name="generator" content="MATLAB 24.1">
 <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
-<meta name="DC.date" content="2024-03-21">
+<meta name="DC.date" content="2025-06-27">
 <meta name="DC.source" content="sm_boom_lift_crawler_Demo_Script.m">
 <style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
@@ -76,45 +76,102 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 </head>
 <body>
 <div class="content">
-<h1>Boom Lift Crawler Demo Script</h1>
+<h1>Boom Lift Crawler with Simscape</h1>
 <p>
-<span style="font-family:Arial">
-<span style="font-size:10pt">
-<tr><b><u>Model</u></b><br>
-<tr>Controls Model: <a href="matlab:web('sm_boom_lift_crawler_abstract.html');">Documentation</a>, <a href="matlab:open_system('sm_boom_lift_crawler_abstract');">Model</a><br>
-<tr>Hydraulics Model: <a href="matlab:web('sm_boom_lift_crawler.html');">Documentation</a>, <a href="matlab:open_system('sm_boom_lift_crawler');">Model</a><br>
-<br>
-<tr><b><u>Test Harnesses: Actuator Requirements</u></b><br>
-<tr>1.   Full Lift: <a href="matlab:web('sm_boom_lift_crawler_harness_full_motion.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('full motion');">Model</a><br>
-<tr>2.   Chassis:   <a href="matlab:web('sm_boom_lift_crawler_harness_chassis_motion.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('chassis motion');">Model</a><br>
-<tr>3.   Boom:      <a href="matlab:web('sm_boom_lift_crawler_harness_boom_motion.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('boom motion');">Model</a><br>
-<tr>4.   Basket:    <a href="matlab:web('sm_boom_lift_crawler_harness_basket_motion.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('basket motion');">Model</a><br>
-<br>
-<tr><b><u>Test Harnesses: Actuator Design</u></b><br>
-<tr>5.   Ground Manifold: <a href="matlab:web('sm_boom_lift_crawler_harness_ground_hydr.html');">Documentation</a>,   <a href="matlab:sm_boom_lift_crawler_harness_open('ground manifold hydr');">Model</a><br>
-<tr>6.   Outrigger:       <a href="matlab:web('sm_boom_lift_crawler_harness_outr_hydr.html');">Documentation</a>,     <a href="matlab:sm_boom_lift_crawler_harness_open('outrigger hydr');">Model</a><br>
-<tr>7.   Track Extend:    <a href="matlab:web('sm_boom_lift_crawler_harness_track_hydr.html');">Documentation</a>,    <a href="matlab:sm_boom_lift_crawler_harness_open('track hydr');">Model</a><br>
-<tr>8.   Sky Manifold:    <a href="matlab:web('sm_boom_lift_crawler_harness_sky_hydr.html');">Documentation</a>,     <a href="matlab:sm_boom_lift_crawler_harness_open('sky manifold hydr');">Model</a><br>
-<tr>9.   Turret:          <a href="matlab:web('sm_boom_lift_crawler_harness_turret_hydr.html');">Documentation</a>,   <a href="matlab:sm_boom_lift_crawler_harness_open('turret hydr');">Model</a><br>
-<tr>10.  Lift:            <a href="matlab:web('sm_boom_lift_crawler_harness_lift_hydr.html');">Documentation</a>,     <a href="matlab:sm_boom_lift_crawler_harness_open('lift hydr');">Model</a><br>
-<tr>11.  Extend:          <a href="matlab:web('sm_boom_lift_crawler_harness_extend_hydr.html');">Documentation</a>,   <a href="matlab:sm_boom_lift_crawler_harness_open('extend hydr');">Model</a><br>
-<tr>12.  Jib (3D):        <a href="matlab:web('sm_boom_lift_crawler_harness_jib_hydr_3D.html');">Documentation</a>,   <a href="matlab:sm_boom_lift_crawler_harness_open('jib hydr 3D');">Model</a><br>
-<tr>13.  Jib (1D):        <a href="matlab:web('sm_boom_lift_crawler_harness_jib_hydr_1D.html');">Documentation</a>,   <a href="matlab:sm_boom_lift_crawler_harness_open('jib hydr 1D');">Model</a><br>
-<tr>14.  Basket Rotate:   <a href="matlab:web('sm_boom_lift_crawler_harness_basket_rotate_hydr.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('basket rotate hydr');">Model</a><br>
-<tr>15.  Basket Level:    <a href="matlab:web('sm_boom_lift_crawler_harness_basket_level_hydr.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('basket level hydr');">Model</a><br>
-<tr>16.  Basket Level Tilt: <a href="matlab:web('sm_boom_lift_crawler_harness_basket_level_tilt_hydr.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('basket level tilt hydr');">Model</a><br>
-<tr>17.  Flexible Boom:   <a href="matlab:web('sm_boom_lift_crawler_flex_boom_motion.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('flex boom motion');">Model</a><br>
-<br>
-<tr><b><u>Example Models</u></b><br>
-<tr>1.   <a href="matlab:open_system('sm_boom_lift_crawler_contact_foot');">Foot-Ground Contact Model</a><br>
-<tr>2.   <a href="matlab:open_system('sm_boom_lift_crawler_valve_sequence_test');">Valve Sequence Timing Model</a><br>
-<br>
-</style>
-</style>
+<img vspace="5" hspace="5" src="sm_boom_lift_crawler_Demo_Script.png" alt=""> </p>
+<p>This example models a boom lift with hydraulic actuators. The lift has 6 hydraulic actuators in the chassis, 7 hydraulic actuators in the boom plus one other passive hydraulic cylinder. The mechanical model of the lift was created in CAD software and imported into Simscape Multibody.</p>
+<div>
+<ul>
+<li>
+<b>CAD geometry</b> is imported to ensure accurate representation of masses, inertias, and joint locations.</li>
+<li>
+<b>Mechanical effects</b> are incorporated into the design, including ground contact, worm gear kinematics, cables, and flexible bodies</li>
+<li>
+<b>Actuator requirements</b> are refined using dynamic simulation with abstract actuator models</li>
+<li>
+<b>Hydraulic components</b> including valve blocks, pipelines, and actuators are integrated with the multibody model of the system.</li>
+<li>
+<b>Modular testing</b> ensures efficient development, as each actuation systemcan be tested in a separate model</li>
+<li>
+<b>Integrated testing of physical system and controller</b> is supported by combining a hydromechanical model with sensors and a logic controller.</li>
+<li>
+<b>Interactive workflows</b> are shown using dashboard blocks to test algorithms</li>
+<li>
+<b>MATLAB Apps</b> helps you open the model that best matches your needs.</li>
+</ul>
+</div>
+<p>
+<b>Model</b>
 </p>
-<pre class="codeinput">
-<span class="comment">% Copyright 2020-2024 The MathWorks(TM), Inc.</span>
-</pre>
+<div>
+<ol>
+<li>Controls Model: <a href="matlab:web('sm_boom_lift_crawler_abstract.html');">Documentation</a>, <a href="matlab:open_system('sm_boom_lift_crawler_abstract');">Model</a>
+</li>
+<li>Hydraulics Model: <a href="matlab:web('sm_boom_lift_crawler.html');">Documentation</a>, <a href="matlab:open_system('sm_boom_lift_crawler');">Model</a>
+</li>
+</ol>
+</div>
+<p>
+<b>Test Harnesses: Actuator Requirements</b>
+</p>
+<div>
+<ol>
+<li>Full Lift: <a href="matlab:web('sm_boom_lift_crawler_harness_full_motion.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('full%20motion');">Model</a>
+</li>
+<li>Chassis: <a href="matlab:web('sm_boom_lift_crawler_harness_chassis_motion.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('chassis%20motion');">Model</a>
+</li>
+<li>Boom: <a href="matlab:web('sm_boom_lift_crawler_harness_boom_motion.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('boom%20motion');">Model</a>
+</li>
+<li>Basket: <a href="matlab:web('sm_boom_lift_crawler_harness_basket_motion.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('basket%20motion');">Model</a>
+</li>
+</ol>
+</div>
+<p>
+<b>Test Harnesses: Actuator Design</b>
+</p>
+<div>
+<ol>
+<li>Ground Manifold: <a href="matlab:web('sm_boom_lift_crawler_harness_ground_hydr.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('ground%20manifold%20hydr');">Model</a>
+</li>
+<li>Outrigger: <a href="matlab:web('sm_boom_lift_crawler_harness_outr_hydr.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('outrigger%20hydr');">Model</a>
+</li>
+<li>Track Extend: <a href="matlab:web('sm_boom_lift_crawler_harness_track_hydr.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('track%20hydr');">Model</a>
+</li>
+<li>Sky Manifold: <a href="matlab:web('sm_boom_lift_crawler_harness_sky_hydr.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('sky%20manifold%20hydr');">Model</a>
+</li>
+<li>Turret: <a href="matlab:web('sm_boom_lift_crawler_harness_turret_hydr.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('turret%20hydr');">Model</a>
+</li>
+<li>Lift: <a href="matlab:web('sm_boom_lift_crawler_harness_lift_hydr.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('lift%20hydr');">Model</a>
+</li>
+<li>Extend: <a href="matlab:web('sm_boom_lift_crawler_harness_extend_hydr.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('extend%20hydr');">Model</a>
+</li>
+<li>Jib (3D): <a href="matlab:web('sm_boom_lift_crawler_harness_jib_hydr_3D.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('jib%20hydr%203D');">Model</a>
+</li>
+<li>Jib (1D): <a href="matlab:web('sm_boom_lift_crawler_harness_jib_hydr_1D.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('jib%20hydr%201D');">Model</a>
+</li>
+<li>Basket Rotate: <a href="matlab:web('sm_boom_lift_crawler_harness_basket_rotate_hydr.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('basket%20rotate%20hydr');">Model</a>
+</li>
+<li>Basket Level: <a href="matlab:web('sm_boom_lift_crawler_harness_basket_level_hydr.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('basket%20level%20hydr');">Model</a>
+</li>
+<li>Basket Level Tilt: <a href="matlab:web('sm_boom_lift_crawler_harness_basket_level_tilt_hydr.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('basket%20level%20tilt%20hydr');">Model</a>
+</li>
+<li>Flexible Boom: <a href="matlab:web('sm_boom_lift_crawler_flex_boom_motion.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('flex%20boom%20motion');">Model</a>
+</li>
+</ol>
+</div>
+<p>
+<b>Example Models</b>
+</p>
+<div>
+<ol>
+<li>
+<a href="matlab:open_system('sm_boom_lift_crawler_contact_foot');">Foot-Ground Contact Model</a>
+</li>
+<li>
+<a href="matlab:open_system('sm_boom_lift_crawler_valve_sequence_test');">Valve Sequence Timing Model</a>
+</li>
+</ol>
+</div>
 <p class="footer">
 <br>
 <a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2024a</a>
@@ -123,46 +180,66 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 </div>
 <!--
 ##### SOURCE BEGIN #####
-%% Boom Lift Crawler Demo Script
+%% Boom Lift Crawler with Simscape
 %
-% <html>
-% <span style="font-family:Arial">
-% <span style="font-size:10pt">
-% <tr><b><u>Model</u></b><br>
-% <tr>Controls Model: <a href="matlab:web('sm_boom_lift_crawler_abstract.html');">Documentation</a>, <a href="matlab:open_system('sm_boom_lift_crawler_abstract');">Model</a><br>
-% <tr>Hydraulics Model: <a href="matlab:web('sm_boom_lift_crawler.html');">Documentation</a>, <a href="matlab:open_system('sm_boom_lift_crawler');">Model</a><br>
-% <br>
-% <tr><b><u>Test Harnesses: Actuator Requirements</u></b><br>
-% <tr>1.   Full Lift: <a href="matlab:web('sm_boom_lift_crawler_harness_full_motion.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('full motion');">Model</a><br>
-% <tr>2.   Chassis:   <a href="matlab:web('sm_boom_lift_crawler_harness_chassis_motion.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('chassis motion');">Model</a><br>
-% <tr>3.   Boom:      <a href="matlab:web('sm_boom_lift_crawler_harness_boom_motion.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('boom motion');">Model</a><br>
-% <tr>4.   Basket:    <a href="matlab:web('sm_boom_lift_crawler_harness_basket_motion.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('basket motion');">Model</a><br>
-% <br>
-% <tr><b><u>Test Harnesses: Actuator Design</u></b><br>
-% <tr>5.   Ground Manifold: <a href="matlab:web('sm_boom_lift_crawler_harness_ground_hydr.html');">Documentation</a>,   <a href="matlab:sm_boom_lift_crawler_harness_open('ground manifold hydr');">Model</a><br>
-% <tr>6.   Outrigger:       <a href="matlab:web('sm_boom_lift_crawler_harness_outr_hydr.html');">Documentation</a>,     <a href="matlab:sm_boom_lift_crawler_harness_open('outrigger hydr');">Model</a><br>
-% <tr>7.   Track Extend:    <a href="matlab:web('sm_boom_lift_crawler_harness_track_hydr.html');">Documentation</a>,    <a href="matlab:sm_boom_lift_crawler_harness_open('track hydr');">Model</a><br>
-% <tr>8.   Sky Manifold:    <a href="matlab:web('sm_boom_lift_crawler_harness_sky_hydr.html');">Documentation</a>,     <a href="matlab:sm_boom_lift_crawler_harness_open('sky manifold hydr');">Model</a><br>
-% <tr>9.   Turret:          <a href="matlab:web('sm_boom_lift_crawler_harness_turret_hydr.html');">Documentation</a>,   <a href="matlab:sm_boom_lift_crawler_harness_open('turret hydr');">Model</a><br>
-% <tr>10.  Lift:            <a href="matlab:web('sm_boom_lift_crawler_harness_lift_hydr.html');">Documentation</a>,     <a href="matlab:sm_boom_lift_crawler_harness_open('lift hydr');">Model</a><br>
-% <tr>11.  Extend:          <a href="matlab:web('sm_boom_lift_crawler_harness_extend_hydr.html');">Documentation</a>,   <a href="matlab:sm_boom_lift_crawler_harness_open('extend hydr');">Model</a><br>
-% <tr>12.  Jib (3D):        <a href="matlab:web('sm_boom_lift_crawler_harness_jib_hydr_3D.html');">Documentation</a>,   <a href="matlab:sm_boom_lift_crawler_harness_open('jib hydr 3D');">Model</a><br>
-% <tr>13.  Jib (1D):        <a href="matlab:web('sm_boom_lift_crawler_harness_jib_hydr_1D.html');">Documentation</a>,   <a href="matlab:sm_boom_lift_crawler_harness_open('jib hydr 1D');">Model</a><br>
-% <tr>14.  Basket Rotate:   <a href="matlab:web('sm_boom_lift_crawler_harness_basket_rotate_hydr.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('basket rotate hydr');">Model</a><br>
-% <tr>15.  Basket Level:    <a href="matlab:web('sm_boom_lift_crawler_harness_basket_level_hydr.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('basket level hydr');">Model</a><br>
-% <tr>16.  Basket Level Tilt: <a href="matlab:web('sm_boom_lift_crawler_harness_basket_level_tilt_hydr.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('basket level tilt hydr');">Model</a><br>
-% <tr>17.  Flexible Boom:   <a href="matlab:web('sm_boom_lift_crawler_flex_boom_motion.html');">Documentation</a>, <a href="matlab:sm_boom_lift_crawler_harness_open('flex boom motion');">Model</a><br>
-% <br>
-% <tr><b><u>Example Models</u></b><br>
-% <tr>1.   <a href="matlab:open_system('sm_boom_lift_crawler_contact_foot');">Foot-Ground Contact Model</a><br>
-% <tr>2.   <a href="matlab:open_system('sm_boom_lift_crawler_valve_sequence_test');">Valve Sequence Timing Model</a><br>
-% <br>
-% </style>
-% </style>
-% </html>
+% <<sm_boom_lift_crawler_Demo_Script.png>>
+% 
+% This example models a boom lift with hydraulic actuators. The lift 
+% has 6 hydraulic actuators in the chassis, 7 hydraulic actuators in 
+% the boom plus one other passive hydraulic cylinder. The mechanical model
+% of the lift was created in CAD software and imported into Simscape Multibody. 
+%
+% * *CAD geometry* is imported to ensure accurate representation of masses,
+% inertias, and joint locations.
+% * *Mechanical effects* are incorporated into the design, including ground
+% contact, worm gear kinematics, cables, and flexible bodies
+% * *Actuator requirements* are refined using dynamic simulation with
+% abstract actuator models
+% * *Hydraulic components* including valve blocks, pipelines, and actuators
+% are integrated with the multibody model of the system.
+% * *Modular testing* ensures efficient development, as each actuation
+% systemcan be tested in a separate model
+% * *Integrated testing of physical system and controller* is supported by
+% combining a hydromechanical model with sensors and a logic controller.
+% * *Interactive workflows* are shown using dashboard blocks to test
+% algorithms
+% * *MATLAB Apps* helps you open the model that best matches your needs.
+%
+% *Model*
+%
+% # Controls Model: <matlab:web('sm_boom_lift_crawler_abstract.html'); Documentation>, <matlab:open_system('sm_boom_lift_crawler_abstract'); Model>
+% # Hydraulics Model: <matlab:web('sm_boom_lift_crawler.html'); Documentation>, <matlab:open_system('sm_boom_lift_crawler'); Model>
+% 
+% *Test Harnesses: Actuator Requirements*
+%
+% # Full Lift: <matlab:web('sm_boom_lift_crawler_harness_full_motion.html'); Documentation>, <matlab:sm_boom_lift_crawler_harness_open('full%20motion'); Model>
+% # Chassis:   <matlab:web('sm_boom_lift_crawler_harness_chassis_motion.html'); Documentation>, <matlab:sm_boom_lift_crawler_harness_open('chassis%20motion'); Model>
+% # Boom:      <matlab:web('sm_boom_lift_crawler_harness_boom_motion.html'); Documentation>, <matlab:sm_boom_lift_crawler_harness_open('boom%20motion'); Model>
+% # Basket:    <matlab:web('sm_boom_lift_crawler_harness_basket_motion.html'); Documentation>, <matlab:sm_boom_lift_crawler_harness_open('basket%20motion'); Model>
+% 
+% *Test Harnesses: Actuator Design*
+%
+% # Ground Manifold: <matlab:web('sm_boom_lift_crawler_harness_ground_hydr.html'); Documentation>,   <matlab:sm_boom_lift_crawler_harness_open('ground%20manifold%20hydr'); Model>
+% # Outrigger:       <matlab:web('sm_boom_lift_crawler_harness_outr_hydr.html'); Documentation>,     <matlab:sm_boom_lift_crawler_harness_open('outrigger%20hydr'); Model>
+% # Track Extend:    <matlab:web('sm_boom_lift_crawler_harness_track_hydr.html'); Documentation>,    <matlab:sm_boom_lift_crawler_harness_open('track%20hydr'); Model>
+% # Sky Manifold:    <matlab:web('sm_boom_lift_crawler_harness_sky_hydr.html'); Documentation>,     <matlab:sm_boom_lift_crawler_harness_open('sky%20manifold%20hydr'); Model>
+% # Turret:          <matlab:web('sm_boom_lift_crawler_harness_turret_hydr.html'); Documentation>,   <matlab:sm_boom_lift_crawler_harness_open('turret%20hydr'); Model>
+% # Lift:            <matlab:web('sm_boom_lift_crawler_harness_lift_hydr.html'); Documentation>,     <matlab:sm_boom_lift_crawler_harness_open('lift%20hydr'); Model>
+% # Extend:          <matlab:web('sm_boom_lift_crawler_harness_extend_hydr.html'); Documentation>,   <matlab:sm_boom_lift_crawler_harness_open('extend%20hydr'); Model>
+% # Jib (3D):        <matlab:web('sm_boom_lift_crawler_harness_jib_hydr_3D.html'); Documentation>,   <matlab:sm_boom_lift_crawler_harness_open('jib%20hydr%203D'); Model>
+% # Jib (1D):        <matlab:web('sm_boom_lift_crawler_harness_jib_hydr_1D.html'); Documentation>,   <matlab:sm_boom_lift_crawler_harness_open('jib%20hydr%201D'); Model>
+% # Basket Rotate:   <matlab:web('sm_boom_lift_crawler_harness_basket_rotate_hydr.html'); Documentation>, <matlab:sm_boom_lift_crawler_harness_open('basket%20rotate%20hydr'); Model>
+% # Basket Level:    <matlab:web('sm_boom_lift_crawler_harness_basket_level_hydr.html'); Documentation>, <matlab:sm_boom_lift_crawler_harness_open('basket%20level%20hydr'); Model>
+% # Basket Level Tilt: <matlab:web('sm_boom_lift_crawler_harness_basket_level_tilt_hydr.html'); Documentation>, <matlab:sm_boom_lift_crawler_harness_open('basket%20level%20tilt%20hydr'); Model>
+% # Flexible Boom:   <matlab:web('sm_boom_lift_crawler_flex_boom_motion.html'); Documentation>, <matlab:sm_boom_lift_crawler_harness_open('flex%20boom%20motion'); Model>
+% 
+% *Example Models*
+%
+% # <matlab:open_system('sm_boom_lift_crawler_contact_foot'); Foot-Ground Contact Model>
+% # <matlab:open_system('sm_boom_lift_crawler_valve_sequence_test'); Valve Sequence Timing Model>
 % 
 
-% Copyright 2020-2024 The MathWorks(TM), Inc.
+% Copyright 2020-2025 The MathWorks(TM), Inc.
 
 
 ##### SOURCE END #####
