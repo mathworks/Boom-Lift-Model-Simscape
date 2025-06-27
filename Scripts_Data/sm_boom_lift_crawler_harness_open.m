@@ -15,7 +15,7 @@ ctrl_model      = 'sm_boom_lift_crawler_abstract';
 abstrflex_model = 'sm_boom_lift_crawler_abstract_flex_boom';
 flex_boom_model = 'sm_boom_lift_crawler_flex_boom';
 
-switch lower(harness_name)
+switch lower(strrep(harness_name,'%20',' '))
     case 'full motion'
         harness_suffix = 'full_motion';
         host_mdl       = lift_lib;
