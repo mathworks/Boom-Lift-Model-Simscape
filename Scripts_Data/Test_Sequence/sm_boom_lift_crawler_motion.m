@@ -1,6 +1,6 @@
 function motion = sm_boom_lift_crawler_motion
 % Function to define motion profiles for testing
-% Copyright 2020-2024 The MathWorks, Inc.
+% Copyright 2020-2025 The MathWorks, Inc.
 
 turret.t  = [0 25.5];
 turret.q  = [0 -158.9];
