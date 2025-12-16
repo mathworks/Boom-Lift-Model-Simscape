@@ -65,5 +65,5 @@ sm_boom_lift_crawler_plot08boompab_lift
 
 %%
 %clear all
-%close all
+close all
 bdclose all

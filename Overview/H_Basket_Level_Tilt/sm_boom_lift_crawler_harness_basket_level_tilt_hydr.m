@@ -66,5 +66,5 @@ sm_boom_lift_crawler_plot09boompab_tilt
 
 %%
 %clear all
-%close all
+close all
 bdclose all

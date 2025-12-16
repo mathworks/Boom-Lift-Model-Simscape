@@ -60,5 +60,5 @@ sm_boom_lift_crawler_plot10boompab_rotate
 
 %%
 %clear all
-%close all
+close all
 bdclose all

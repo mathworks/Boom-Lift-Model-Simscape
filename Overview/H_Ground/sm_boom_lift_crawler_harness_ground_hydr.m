@@ -88,5 +88,5 @@ sm_boom_lift_crawler_plot07chassispab_track
 
 %%
 %clear all
-%close all
+close all
 bdclose all

@@ -106,5 +106,5 @@ sm_boom_lift_crawler_plot05boompf_rotate
 
 %%
 %clear all
-%close all
+close all
 bdclose all
