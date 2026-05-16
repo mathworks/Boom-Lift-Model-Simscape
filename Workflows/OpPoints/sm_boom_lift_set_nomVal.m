@@ -5,7 +5,7 @@
 % may be useful for confirming that any new model has the 
 % correct settings for nominal values
 
-% Copyright 2020-2025 The MathWorks, Inc.
+% Copyright 2020-2026 The MathWorks, Inc.
 
 
 snv = '[{"value":"1","unit":"A"},{"value":"nomval_psi","unit":"psi"},{"value":"1","unit":"cm^2"},{"value":"nomval_cmv3_s","unit":"cm^3/s"},{"value":"1","unit":"kJ/kg"},{"value":"1","unit":"kW"},{"value":"1","unit":"l"},{"value":"nomval_N","unit":"N"},{"value":"nomval_Nm","unit":"N*m"},{"value":"1","unit":"V"}]';

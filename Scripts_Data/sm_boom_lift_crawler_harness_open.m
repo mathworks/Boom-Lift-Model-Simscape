@@ -1,7 +1,7 @@
 function sm_boom_lift_crawler_harness_open(harness_name)
 % Function to open selected test model
 
-% Copyright 2020-2025 The MathWorks, Inc.
+% Copyright 2020-2026 The MathWorks, Inc.
 
 % Use strrep to ensure compatible with MATLAB Online
 switch lower(strrep(harness_name,'%20',' '))

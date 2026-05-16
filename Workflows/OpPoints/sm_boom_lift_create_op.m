@@ -1,7 +1,7 @@
 %% Run these scripts to update operating points
 %  May be necessary when upgrading to a new MATLAB release
 
-% Copyright 2020-2025 The MathWorks, Inc.
+% Copyright 2020-2026 The MathWorks, Inc.
 
 sm_boom_lift_crawler_create_op
 sm_boom_lift_crawler_create_op_jib_hydr_1d

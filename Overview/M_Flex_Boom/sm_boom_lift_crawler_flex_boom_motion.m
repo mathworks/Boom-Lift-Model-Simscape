@@ -6,7 +6,7 @@
 % is used to identify natural frequencies at different levels of boom
 % extension.
 %
-% Copyright 2020-2025 The MathWorks, Inc.
+% Copyright 2020-2026 The MathWorks, Inc.
 
 
 %% Model
@@ -91,6 +91,8 @@ sm_boom_lift_crawler_plot03boompf_lift
 %
 % The plot below shows the variation in frequency response.
 
+close(h12_sm_boom_lift_crawler_valves)
+close(h3_sm_boom_lift_crawler)
 set_param([bdroot '/Telescoping Boom Flex'],'popup_flexType','Classical');
 close_system([bdroot '/Spectrum Analyzer'])
 close_system([bdroot '/Boom Deflection'])

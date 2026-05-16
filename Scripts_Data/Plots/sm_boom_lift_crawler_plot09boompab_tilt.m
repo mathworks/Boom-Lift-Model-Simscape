@@ -2,7 +2,7 @@
 %% Plot Description:
 %
 
-% Copyright 2020-2025 The MathWorks, Inc.
+% Copyright 2020-2026 The MathWorks, Inc.
 
 % Get simulation results
 RetWkspName = get_param(bdroot,'ReturnWorkspaceOutputsName');
